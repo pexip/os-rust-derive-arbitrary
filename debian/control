@@ -1,0 +1,41 @@
+Source: rust-derive-arbitrary
+Section: rust
+Priority: optional
+Build-Depends: debhelper (>= 12),
+ dh-cargo (>= 25),
+ cargo:native <!nocheck>,
+ rustc:native <!nocheck>,
+ libstd-rust-dev <!nocheck>,
+ librust-proc-macro2-1+default-dev <!nocheck>,
+ librust-quote-1+default-dev <!nocheck>,
+ librust-syn-1+default-dev <!nocheck>,
+ librust-syn-1+derive-dev <!nocheck>
+Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
+Uploaders:
+ Sylvestre Ledru <sylvestre@debian.org>
+Standards-Version: 4.5.1
+Vcs-Git: https://salsa.debian.org/rust-team/debcargo-conf.git [src/derive-arbitrary]
+Vcs-Browser: https://salsa.debian.org/rust-team/debcargo-conf/tree/master/src/derive-arbitrary
+X-Cargo-Crate: derive_arbitrary
+Rules-Requires-Root: no
+
+Package: librust-derive-arbitrary-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ librust-proc-macro2-1+default-dev,
+ librust-quote-1+default-dev,
+ librust-syn-1+default-dev,
+ librust-syn-1+derive-dev
+Provides:
+ librust-derive-arbitrary+default-dev (= ${binary:Version}),
+ librust-derive-arbitrary-1-dev (= ${binary:Version}),
+ librust-derive-arbitrary-1+default-dev (= ${binary:Version}),
+ librust-derive-arbitrary-1.0-dev (= ${binary:Version}),
+ librust-derive-arbitrary-1.0+default-dev (= ${binary:Version}),
+ librust-derive-arbitrary-1.0.2-dev (= ${binary:Version}),
+ librust-derive-arbitrary-1.0.2+default-dev (= ${binary:Version})
+Description: Derives arbitrary traits - Rust source code
+ This package contains the source for the Rust derive_arbitrary crate, packaged
+ by debcargo for use with cargo and dh-cargo.
