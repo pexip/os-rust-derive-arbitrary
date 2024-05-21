@@ -4,17 +4,18 @@ Priority: optional
 Build-Depends: debhelper (>= 12),
  dh-cargo (>= 25),
  cargo:native <!nocheck>,
- rustc:native <!nocheck>,
+ rustc:native (>= 1.63.0) <!nocheck>,
  libstd-rust-dev <!nocheck>,
  librust-proc-macro2-1+default-dev <!nocheck>,
  librust-quote-1+default-dev <!nocheck>,
- librust-syn-1+default-dev <!nocheck>,
- librust-syn-1+derive-dev <!nocheck>
+ librust-syn-2+default-dev <!nocheck>,
+ librust-syn-2+derive-dev <!nocheck>,
+ librust-syn-2+parsing-dev <!nocheck>
 Maintainer: Pexip AS <packaging@pexip.com>
 XSBC-Pexip-Original-Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
 XSBC-Pexip-Original-Uploaders:
  Sylvestre Ledru <sylvestre@debian.org>
-Standards-Version: 4.5.1
+Standards-Version: 4.6.2
 Vcs-Git: https://salsa.debian.org/rust-team/debcargo-conf.git [src/derive-arbitrary]
 Vcs-Browser: https://salsa.debian.org/rust-team/debcargo-conf/tree/master/src/derive-arbitrary
 X-Cargo-Crate: derive_arbitrary
@@ -28,16 +29,16 @@ Depends:
  ${misc:Depends},
  librust-proc-macro2-1+default-dev,
  librust-quote-1+default-dev,
- librust-syn-1+default-dev,
- librust-syn-1+derive-dev
+ librust-syn-2+default-dev,
+ librust-syn-2+derive-dev,
+ librust-syn-2+parsing-dev
 Provides:
  librust-derive-arbitrary+default-dev (= ${binary:Version}),
  librust-derive-arbitrary-1-dev (= ${binary:Version}),
  librust-derive-arbitrary-1+default-dev (= ${binary:Version}),
- librust-derive-arbitrary-1.1-dev (= ${binary:Version}),
- librust-derive-arbitrary-1.1+default-dev (= ${binary:Version}),
- librust-derive-arbitrary-1.1.3-dev (= ${binary:Version}),
- librust-derive-arbitrary-1.1.3+default-dev (= ${binary:Version})
+ librust-derive-arbitrary-1.3-dev (= ${binary:Version}),
+ librust-derive-arbitrary-1.3+default-dev (= ${binary:Version}),
+ librust-derive-arbitrary-1.3.2-dev (= ${binary:Version}),
+ librust-derive-arbitrary-1.3.2+default-dev (= ${binary:Version})
 Description: Derives arbitrary traits - Rust source code
- This package contains the source for the Rust derive_arbitrary crate, packaged
- by debcargo for use with cargo and dh-cargo.
+ Source code for Debianized Rust crate "derive_arbitrary"
